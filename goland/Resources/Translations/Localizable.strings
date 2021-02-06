@@ -1,0 +1,33 @@
+/* 
+  Localizable.strings
+  goland
+
+  Created by Kusyumov Nikita on 27.08.2020.
+  Copyright © 2020 n.kusyumov@mail.ru. All rights reserved.
+*/
+
+// MARK: Common
+
+"common.cancel" = "Отмена";
+"common.exit" = "Выйти";
+"common.enter" = "Войти";
+"common.next" = "Далее";
+"common.back" = "Назад";
+"common.ooopsError" = "Упс... Что-то пошло не так!";
+"common.inDev" = "Данный раздел находится в разработке";
+
+// MARK: TabBar
+
+"tabBar.auction.title" = "Аукцион";
+"tabBar.about.title" = "Связь с нами";
+"tabBar.profile.title" = "Профиль";
+
+// MARK: Sign in
+
+"signIn.authorisation.text" = "Авторизация";
+"signIn.login.placeholder" = "Логин";
+"signIn.password.placeholder" = "Пароль";
+"signIn.repeatPassword.placeholder" = "Повторите пароль";
+"signIn.registration.text" = "Регистрация";
+"signIn.forgotPassword.text" = "Восстановить";
+"signIn.registr.buttonText" = "Зарегистрироваться";

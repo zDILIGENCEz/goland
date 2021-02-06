@@ -1,0 +1,6 @@
+module Pods_goland {
+  umbrella header "Pods-goland-umbrella.h"
+
+  export *
+  module * { export * }
+}

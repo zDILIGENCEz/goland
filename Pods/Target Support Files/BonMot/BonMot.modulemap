@@ -1,0 +1,6 @@
+module BonMot {
+  umbrella header "BonMot-umbrella.h"
+
+  export *
+  module * { export * }
+}
