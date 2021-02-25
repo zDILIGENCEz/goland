@@ -9,6 +9,8 @@
 import UIKit
 
 class AuctionCategoryCollectionCell: UICollectionViewCell {
+    
+    var isCellSelected: Bool = false
 
     // MARK: - Internal properties
 
@@ -22,6 +24,7 @@ class AuctionCategoryCollectionCell: UICollectionViewCell {
     lazy var categoryNameLabel: UILabel = {
         let label = UILabel()
         label.bonMotStyle = .regular14(.black)
+        label.bonMotStyle?.alignment = .center
         return label
     }()
     
@@ -75,6 +78,19 @@ extension AuctionCategoryCollectionCell: Configurable {
     
     func configure(with text: String) {
         categoryNameLabel.styledText = text
+        changeCellSelection()
+    }
+    
+    func changeCellSelection(with isCellSelected: Bool) {
+        categoryNameLabel.bonMotStyle = .regular14(isCellSelected ? .goMainGreen : .black)
+        categoryNameLabel.bonMotStyle?.alignment = .center
+        lineView.isHidden = !isCellSelected
+    }
+    
+    func changeCellSelection() {
+        categoryNameLabel.bonMotStyle = .regular14(isSelected ? .goMainGreen : .black)
+        categoryNameLabel.bonMotStyle?.alignment = .center
+        lineView.isHidden = !isSelected
     }
     
 }

@@ -35,12 +35,13 @@ class MainAuctionPageViewController: BaseViewController {
         super.viewWillAppear(animated)
         setupGradientBackground()
         setupModel()
+        setupDefaultCathegoryCell()
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupDelegates()
+        setupCategoryCollectionView()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -49,6 +50,13 @@ class MainAuctionPageViewController: BaseViewController {
     }
     
     // MARK: - Private methods
+    private func setupDefaultCathegoryCell() {
+        mainAuctionPageView.categoryListCollectionView.selectItem(
+            at: IndexPath(row: 0, section: 0),
+            animated: true,
+            scrollPosition: []
+        )
+    }
     
     private func setupModel() {
         mainAuctionPageViewModel.categories.append(Category(id: "1", name: "Рекомендованные"))
@@ -59,7 +67,7 @@ class MainAuctionPageViewController: BaseViewController {
         mainAuctionPageViewModel.categories.append(Category(id: "6", name: "Современное искусство"))
     }
     
-    private func setupDelegates() {
+    private func setupCategoryCollectionView() {
         mainAuctionPageView.categoryListCollectionView.delegate = self
         mainAuctionPageView.categoryListCollectionView.dataSource = self
     }
@@ -80,6 +88,16 @@ extension MainAuctionPageViewController: UICollectionViewDelegate, UICollectionV
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? AuctionCategoryCollectionCell else { return }
+        cell.changeCellSelection()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? AuctionCategoryCollectionCell else { return }
+        cell.changeCellSelection()
+    }
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let item = mainAuctionPageViewModel.categories[indexPath.row].name
         let itemSize = item.size(withAttributes: [

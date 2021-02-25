@@ -26,9 +26,9 @@ class MainAuctionPageView: UIView {
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(
             top: .zero,
-            left: appearance.gradientViewWidth,
+            left: appearance.gradientViewWidth - 20,
             bottom: .zero,
-            right: .zero
+            right: appearance.gradientViewWidth - 20
         )
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: frame, collectionViewLayout: layout)
