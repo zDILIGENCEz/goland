@@ -8,6 +8,8 @@
 
 struct MainAuctionPageViewModel {
     
+    var selectionApplied = false
+    
     var categories: [Category] = []
     
 }

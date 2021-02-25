@@ -35,7 +35,10 @@ class MainAuctionPageViewController: BaseViewController {
         super.viewWillAppear(animated)
         setupGradientBackground()
         setupModel()
-        setupDefaultCathegoryCell()
+        if !mainAuctionPageViewModel.selectionApplied {
+            setupDefaultCathegoryCell()
+            mainAuctionPageViewModel.selectionApplied = true
+        }
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
