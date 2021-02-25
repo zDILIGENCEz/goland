@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15067F0F25E8195F0049488F /* MainAuctionPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15067F0E25E8195F0049488F /* MainAuctionPageView.swift */; };
+		15067F1125E8196B0049488F /* MainAuctionPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15067F1025E8196B0049488F /* MainAuctionPageViewController.swift */; };
+		15067F1325E819740049488F /* MainAuctionPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15067F1225E819740049488F /* MainAuctionPageViewModel.swift */; };
+		15067F1525E81B880049488F /* AuctionCategoryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15067F1425E81B880049488F /* AuctionCategoryCollectionCell.swift */; };
+		15067F1725E83A8A0049488F /* UIviewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15067F1625E83A8A0049488F /* UIviewExtensions.swift */; };
 		1521AC0E2536228F00530611 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1521AC0D2536228F00530611 /* UserDefaults.swift */; };
 		156AF7C524E8F978000CE3AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156AF7C424E8F978000CE3AF /* AppDelegate.swift */; };
 		156AF7CB24E8F97D000CE3AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 156AF7CA24E8F97D000CE3AF /* Assets.xcassets */; };
@@ -81,6 +86,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		15067F0E25E8195F0049488F /* MainAuctionPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAuctionPageView.swift; sourceTree = "<group>"; };
+		15067F1025E8196B0049488F /* MainAuctionPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAuctionPageViewController.swift; sourceTree = "<group>"; };
+		15067F1225E819740049488F /* MainAuctionPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAuctionPageViewModel.swift; sourceTree = "<group>"; };
+		15067F1425E81B880049488F /* AuctionCategoryCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionCategoryCollectionCell.swift; sourceTree = "<group>"; };
+		15067F1625E83A8A0049488F /* UIviewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIviewExtensions.swift; sourceTree = "<group>"; };
 		1521AC0D2536228F00530611 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		156AF7C124E8F978000CE3AF /* goland.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = goland.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		156AF7C424E8F978000CE3AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -178,6 +188,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		15067F0D25E8193C0049488F /* MainAuctionPage */ = {
+			isa = PBXGroup;
+			children = (
+				15067F0E25E8195F0049488F /* MainAuctionPageView.swift */,
+				15067F1025E8196B0049488F /* MainAuctionPageViewController.swift */,
+				15067F1225E819740049488F /* MainAuctionPageViewModel.swift */,
+			);
+			path = MainAuctionPage;
+			sourceTree = "<group>";
+		};
 		156AF7B824E8F978000CE3AF = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +261,7 @@
 		158DF4572554BC9F00FE637C /* Auction */ = {
 			isa = PBXGroup;
 			children = (
+				15067F0D25E8193C0049488F /* MainAuctionPage */,
 			);
 			path = Auction;
 			sourceTree = "<group>";
@@ -258,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				158DF4622554BFAD00FE637C /* AboutCell.swift */,
+				15067F1425E81B880049488F /* AuctionCategoryCollectionCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -416,6 +438,7 @@
 			isa = PBXGroup;
 			children = (
 				15E0B07924F83B0F009E582F /* UIImageExtensions.swift */,
+				15067F1625E83A8A0049488F /* UIviewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -725,12 +748,14 @@
 				1521AC0E2536228F00530611 /* UserDefaults.swift in Sources */,
 				158DF4592554BCBE00FE637C /* AboutView.swift in Sources */,
 				15AEFDA7252CC1AC00DF5EB8 /* BaseTargetType.swift in Sources */,
+				15067F1525E81B880049488F /* AuctionCategoryCollectionCell.swift in Sources */,
 				158DF4542554A9ED00FE637C /* BaseTabBarController.swift in Sources */,
 				15F94765251A422A0029E809 /* SignInView.swift in Sources */,
 				15E0B07A24F83B0F009E582F /* UIImageExtensions.swift in Sources */,
 				15E0B07424F8394D009E582F /* BaseScrollController.swift in Sources */,
 				15E0B06E24F83862009E582F /* AuthorizationViewController.swift in Sources */,
 				15E0B08C24F8419F009E582F /* Colors.swift in Sources */,
+				15067F1325E819740049488F /* MainAuctionPageViewModel.swift in Sources */,
 				15F94762251A3B3D0029E809 /* TextFieldWithImageView.swift in Sources */,
 				15AEFD97252CBBD000DF5EB8 /* RegistrationPartView.swift in Sources */,
 				15E0B08824F840FE009E582F /* InDevView.swift in Sources */,
@@ -751,10 +776,13 @@
 				15E0B08E24F841B9009E582F /* TextStyles.swift in Sources */,
 				158DF4632554BFAD00FE637C /* AboutCell.swift in Sources */,
 				15E0B08324F84010009E582F /* R.generated.swift in Sources */,
+				15067F0F25E8195F0049488F /* MainAuctionPageView.swift in Sources */,
 				15AEFDA3252CC18C00DF5EB8 /* ErrorHandlingPlugin.swift in Sources */,
 				15E0B09024F84218009E582F /* Configurable.swift in Sources */,
+				15067F1125E8196B0049488F /* MainAuctionPageViewController.swift in Sources */,
 				15AEFD92252CBB0400DF5EB8 /* RegistrationViewController.swift in Sources */,
 				15AEFD9D252CC17B00DF5EB8 /* MoyaPluginManager.swift in Sources */,
+				15067F1725E83A8A0049488F /* UIviewExtensions.swift in Sources */,
 				15E0B07224F83937009E582F /* BaseViewController.swift in Sources */,
 				158DF48D255AAE7300FE637C /* TriangleView.swift in Sources */,
 				15AEFD8C252CBAF600DF5EB8 /* RegistrationView.swift in Sources */,

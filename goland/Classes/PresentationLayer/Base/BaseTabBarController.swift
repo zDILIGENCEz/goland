@@ -28,7 +28,7 @@ class BaseTabBarController: UITabBarController {
     }
 
     func setupTabBarItems() {
-        let firstViewController = UINavigationController(rootViewController: /*AuctionViewController()*/ InDevViewController())
+        let firstViewController = UINavigationController(rootViewController: MainAuctionPageViewController())
         firstViewController.tabBarItem = UITabBarItem(
             title: Localizable.tabBarAuctionTitle(),
             image: Image.tabBar.auctionIcon(),

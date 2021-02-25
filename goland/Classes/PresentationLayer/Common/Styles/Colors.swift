@@ -11,6 +11,8 @@ import UIKit
 extension UIColor {
     
 //    static let orGrayText = UIColor(hexString: "#7B8CA1")
+    
+    static let goMainGreen = UIColor(hexString: "#219653")
     static let goGrayText = UIColor(hexString: "#A3A2A2")
     static let goSlime = UIColor(hexString: "#8DE2C3")
     static let goGray = UIColor(hexString: "#E3E3E3")
