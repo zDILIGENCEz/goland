@@ -50,6 +50,22 @@ extension StringStyle {
         style.color = color
         return style
     }
+    
+    static func regular9(_ color: UIColor) -> StringStyle {
+        var style = StringStyle()
+        let font = Fonts.sansationRegular(size: 9)
+        style.font = font
+        style.color = color
+        return style
+    }
+    
+    static func bold10(_ color: UIColor) -> StringStyle {
+        var style = StringStyle()
+        let font = Fonts.sansationBold(size: 10)
+        style.font = font
+        style.color = color
+        return style
+    }
 
     private static func lineHeightMultiple(spacing: CGFloat, font: UIFont) -> CGFloat {
         return spacing / font.lineHeight

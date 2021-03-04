@@ -17,6 +17,7 @@ class MainAuctionPageView: UIView {
         let categoryListCollectionViewCornerRadius: CGFloat = 20
         let categoryListCollectionViewHeight: CGFloat = 37
         let gradientViewWidth: CGFloat = 43
+        let collectionViewCellHeight: CGFloat = 152
     }
     private let appearance = Appearance()
     
@@ -66,6 +67,28 @@ class MainAuctionPageView: UIView {
         rightGradientView.layer.insertSublayer(gradient, at: 0)
         return gradient
     }()
+    
+    lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(
+            width: UIScreen.main.bounds.width / 2 - 1 ,
+            height: appearance.collectionViewCellHeight
+        )
+        layout.scrollDirection = .vertical
+        layout.minimumInteritemSpacing = 1
+        layout.minimumLineSpacing = 1
+
+        let collectionView = UICollectionView(
+            frame: .zero,
+            collectionViewLayout: layout
+        )
+        collectionView.collectionViewLayout = layout
+        collectionView.backgroundColor = .clear
+        collectionView.register(cellWithClass: AuctionProductCell.self)
+        collectionView.showsVerticalScrollIndicator = false
+        return collectionView
+    }()
+
     
     // MARK: - Init
     
