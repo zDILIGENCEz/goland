@@ -21,8 +21,6 @@ class AuctionProductCell: UICollectionViewCell {
         let endViewHeight: CGFloat = 22
         let auctionImageViewOffset: CGFloat = 2
         let auctionImageViewSize: CGFloat = 18
-        let productImageViewWidth: CGFloat = 163
-        let productImageViewHeight: CGFloat = 96
     }
     private let appearance = Appearance()
 
@@ -45,11 +43,17 @@ class AuctionProductCell: UICollectionViewCell {
         return label
     }()
     
-    lazy var productImageView = UIImageView()
+    lazy var productImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.cornerRadius = appearance.endViewHeight
+        return imageView
+    }()
     
     lazy var productDescriptionLabel: UILabel = {
         let label = UILabel()
         label.bonMotStyle = .bold10(.black)
+        label.numberOfLines = 0
         return label
     }()
     
@@ -69,6 +73,7 @@ class AuctionProductCell: UICollectionViewCell {
     lazy var closeTimeLabel: UILabel = {
         let label = UILabel()
         label.bonMotStyle = .regular10(.goMainGreen)
+        label.numberOfLines = 0
         return label
     }()
     
@@ -97,6 +102,8 @@ class AuctionProductCell: UICollectionViewCell {
     }
 
     private func commonInit() {
+        backgroundColor = .white
+        cornerRadius = 20
         addSubviews()
         makeConstraints()
     }
@@ -130,8 +137,7 @@ class AuctionProductCell: UICollectionViewCell {
         }
         
         endDateLabel.snp.makeConstraints { make in
-            make.top.bottom.equalToSuperview()
-                .offset(appearance.xxsSpace)
+            make.centerY.equalTo(auctionImageView.snp.centerY)
             make.leading.equalTo(auctionImageView.snp.trailing)
                 .offset(appearance.auctionImageViewOffset)
             make.trailing.equalToSuperview()
@@ -143,13 +149,13 @@ class AuctionProductCell: UICollectionViewCell {
                 .offset(appearance.endViewOffsets)
             make.leading.trailing.equalToSuperview()
                 .inset(appearance.endViewOffsets)
-            make.width.equalTo(appearance.productImageViewWidth)
-            make.height.equalTo(appearance.productImageViewHeight)
         }
         
         productDescriptionLabel.snp.makeConstraints { make in
-            make.top.leading.trailing.equalToSuperview()
+            make.top.equalTo(productImageView.snp.bottom)
                 .offset(appearance.endViewOffsets)
+            make.leading.trailing.equalToSuperview()
+                .inset(appearance.endViewOffsets)
         }
         
         closeView.snp.makeConstraints { make in
@@ -157,6 +163,7 @@ class AuctionProductCell: UICollectionViewCell {
                 .offset(appearance.endViewOffsets)
             make.leading.trailing.equalToSuperview()
                 .inset(appearance.endViewOffsets)
+            make.height.equalTo(28)
         }
         
         closeStaticLabel.snp.makeConstraints { make in
@@ -176,6 +183,7 @@ class AuctionProductCell: UICollectionViewCell {
                 .offset(appearance.endViewOffsets)
             make.leading.equalToSuperview()
                 .offset(appearance.endViewOffsets)
+            make.height.equalTo(17)
             make.bottom.equalToSuperview()
                 .inset(appearance.sSpace)
         }
@@ -183,7 +191,7 @@ class AuctionProductCell: UICollectionViewCell {
         priceLabel.snp.makeConstraints { make in
             make.top.equalTo(priceStaticLabel.snp.top)
             make.trailing.equalToSuperview()
-                .offset(appearance.endViewOffsets)
+                .inset(appearance.endViewOffsets)
             make.leading.greaterThanOrEqualTo(priceStaticLabel.snp.trailing)
         }
         
@@ -193,8 +201,31 @@ class AuctionProductCell: UICollectionViewCell {
 
 extension AuctionProductCell: Configurable {
     
-    func configure(with text: String) {
-        
+    func configure(with slot: Slot) {
+        endDateLabel.styledText = "Заканчивается через \(Int(slot.endDate.prefix(2)) ?? 0) дня"
+        productImageView.image = slot.imageUrl
+        productDescriptionLabel.styledText = slot.name
+        closeTimeLabel.styledText = slot.endTime + "\n" + slot.endDate
+        priceLabel.styledText = "XXXXXX ₽"
     }
 
+    func redrawConstraints(with imageHeight: CGFloat, textHeight: CGFloat) {
+        productImageView.snp.remakeConstraints { make in
+            make.top.equalTo(endView.snp.bottom)
+                .offset(appearance.endViewOffsets)
+            make.leading.trailing.equalToSuperview()
+                .inset(appearance.endViewOffsets)
+            make.height.equalTo(imageHeight)
+        }
+        
+        productDescriptionLabel.snp.makeConstraints { make in
+            make.top.equalTo(productImageView.snp.bottom)
+                .offset(appearance.endViewOffsets)
+            make.leading.trailing.equalToSuperview()
+                .inset(appearance.endViewOffsets)
+            make.height.equalTo(textHeight)
+        }
+        
+    }
+    
 }

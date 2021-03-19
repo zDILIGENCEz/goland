@@ -25,7 +25,8 @@ class RootRouter {
     }
 
     func loadMainAppStructure() {
-        let controller = AuthorizationViewController()
+        let controller = MainAuctionPageViewController()
+        //let controller = AuthorizationViewController()
         let navigationController = UINavigationController(rootViewController: controller)
         setRootViewController(controller: navigationController, animatedWithOptions: nil)
     }

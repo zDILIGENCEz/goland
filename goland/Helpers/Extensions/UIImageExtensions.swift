@@ -24,4 +24,10 @@ extension UIImage {
         return data?.base64EncodedString(options: .endLineWithLineFeed)
     }
     
+    func height(with width: CGFloat, naturalSize: CGSize) -> CGFloat {
+        let ratio = naturalSize.width / naturalSize.height
+        let height = width / ratio
+        return height
+    }
+    
 }

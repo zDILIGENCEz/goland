@@ -19,6 +19,8 @@
 		156AF7CB24E8F97D000CE3AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 156AF7CA24E8F97D000CE3AF /* Assets.xcassets */; };
 		156AF7D124E8F97D000CE3AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 156AF7CF24E8F97D000CE3AF /* LaunchScreen.storyboard */; };
 		156AF7DC24E8F97E000CE3AF /* golandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156AF7DB24E8F97E000CE3AF /* golandTests.swift */; };
+		15803ED226049BF800952FF3 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15803ED126049BF800952FF3 /* StringExtensions.swift */; };
+		15803EEA2605368C00952FF3 /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15803EE92605368C00952FF3 /* PinterestLayout.swift */; };
 		158DF4542554A9ED00FE637C /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158DF4532554A9ED00FE637C /* BaseTabBarController.swift */; };
 		158DF4592554BCBE00FE637C /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158DF4582554BCBE00FE637C /* AboutView.swift */; };
 		158DF45B2554BCCF00FE637C /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158DF45A2554BCCF00FE637C /* AboutViewController.swift */; };
@@ -104,6 +106,8 @@
 		156AF7D724E8F97E000CE3AF /* golandTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = golandTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		156AF7DB24E8F97E000CE3AF /* golandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = golandTests.swift; sourceTree = "<group>"; };
 		156AF7DD24E8F97E000CE3AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15803ED126049BF800952FF3 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		15803EE92605368C00952FF3 /* PinterestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
 		158DF4532554A9ED00FE637C /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		158DF4582554BCBE00FE637C /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		158DF45A2554BCCF00FE637C /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -452,6 +456,7 @@
 			children = (
 				15E0B07924F83B0F009E582F /* UIImageExtensions.swift */,
 				15067F1625E83A8A0049488F /* UIviewExtensions.swift */,
+				15803ED126049BF800952FF3 /* StringExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -562,6 +567,7 @@
 				15E0B07B24F83B3C009E582F /* Message.swift */,
 				15F94761251A3B3D0029E809 /* TextFieldWithImageView.swift */,
 				15F94766251A43260029E809 /* CommonAuthorizationButton.swift */,
+				15803EE92605368C00952FF3 /* PinterestLayout.swift */,
 			);
 			path = UIElements;
 			sourceTree = "<group>";
@@ -774,6 +780,7 @@
 				15AEFD97252CBBD000DF5EB8 /* RegistrationPartView.swift in Sources */,
 				15E0B08824F840FE009E582F /* InDevView.swift in Sources */,
 				15E0B06924F83806009E582F /* RootRouter.swift in Sources */,
+				15803EEA2605368C00952FF3 /* PinterestLayout.swift in Sources */,
 				15E0B07824F83ABE009E582F /* Grid.swift in Sources */,
 				158DF4602554BD8400FE637C /* AboutLayerView.swift in Sources */,
 				158DF45B2554BCCF00FE637C /* AboutViewController.swift in Sources */,
@@ -787,6 +794,7 @@
 				15E0B06C24F83854009E582F /* AuthorizationView.swift in Sources */,
 				158DF45D2554BCDB00FE637C /* AboutViewModel.swift in Sources */,
 				15AEFDAF252CC1CF00DF5EB8 /* ProfileServices.swift in Sources */,
+				15803ED226049BF800952FF3 /* StringExtensions.swift in Sources */,
 				15E0B08E24F841B9009E582F /* TextStyles.swift in Sources */,
 				158DF4632554BFAD00FE637C /* AboutCell.swift in Sources */,
 				15E0B08324F84010009E582F /* R.generated.swift in Sources */,

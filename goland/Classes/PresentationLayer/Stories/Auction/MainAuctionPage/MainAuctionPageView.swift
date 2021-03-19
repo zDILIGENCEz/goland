@@ -23,6 +23,8 @@ class MainAuctionPageView: UIView {
     
     // MARK: - UI elements
     
+    // Scrolable cathegory collection
+    
     lazy var categoryListCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(
@@ -67,17 +69,11 @@ class MainAuctionPageView: UIView {
         rightGradientView.layer.insertSublayer(gradient, at: 0)
         return gradient
     }()
-    
-    lazy var collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(
-            width: UIScreen.main.bounds.width / 2 - 1 ,
-            height: appearance.collectionViewCellHeight
-        )
-        layout.scrollDirection = .vertical
-        layout.minimumInteritemSpacing = 1
-        layout.minimumLineSpacing = 1
 
+    // Main collection view
+    
+    lazy var slotCollectionView: UICollectionView = {
+        let layout = PinterestLayout()
         let collectionView = UICollectionView(
             frame: .zero,
             collectionViewLayout: layout
@@ -88,7 +84,6 @@ class MainAuctionPageView: UIView {
         collectionView.showsVerticalScrollIndicator = false
         return collectionView
     }()
-
     
     // MARK: - Init
     
@@ -115,6 +110,7 @@ class MainAuctionPageView: UIView {
         addSubview(categoryListCollectionView)
         addSubview(leftGradientView)
         addSubview(rightGradientView)
+        addSubview(slotCollectionView)
     }
     
     private func makeConstraints() {
@@ -140,6 +136,13 @@ class MainAuctionPageView: UIView {
             make.width.equalTo(appearance.gradientViewWidth)
             make.height.equalTo(categoryListCollectionView.snp.height)
             make.bottom.equalTo(categoryListCollectionView.snp.bottom)
+        }
+        
+        slotCollectionView.snp.makeConstraints { make in
+            make.top.equalTo(categoryListCollectionView.snp.bottom)
+                .offset(appearance.xxsSpace)
+            make.leading.trailing.bottom.equalToSuperview()
+                .inset(appearance.xxsSpace)
         }
     }
     
