@@ -31,3 +31,8 @@
 "signIn.registration.text" = "Регистрация";
 "signIn.forgotPassword.text" = "Восстановить";
 "signIn.registr.buttonText" = "Зарегистрироваться";
+
+// MARK: AuctionMainPage
+
+"auction.closeLabel.text" = "Закрытие:";
+"auction.priceLabel.text" = "Цена:";
